@@ -1,0 +1,12 @@
+import Vue from 'vue'
+import App from './App.vue'
+
+// 匯入store
+import { store } from './store/store';
+
+new Vue({
+  el: '#app',
+  // store:store
+  store,
+  render: h => h(App)
+})
