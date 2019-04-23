@@ -3,14 +3,14 @@
     <!-- <button class="btn btn-primary" @click="increment(100)">Increment</button>
     <button class="btn btn-primary" @click="decrement(50)">Decrement</button>-->
 
-    <button class="btn btn-primary" @click="increment">Increment</button>
-    <button class="btn btn-primary" @click="decrement">Decrement</button>
+    <button class="btn btn-primary" @click="increment(100)">Increment</button>
+    <button class="btn btn-primary" @click="decrement(50)">Decrement</button>
   </div>
 </template>
 
 <script>
 // 將多個mutation放在一起，用mapMutations
-import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
 export default {
   methods: {
     // increment() {
@@ -26,7 +26,10 @@ export default {
     // }
 
     // mapMutations裡面放array
-    ...mapMutations(["increment", "decrement"])
+    ...mapActions(["increment", "decrement"])
+    // increment(by) {
+    //   this.$store.dispatch("increment", by);
+    // }
   }
 };
 </script>
